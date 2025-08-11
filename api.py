@@ -32,7 +32,7 @@ with open('./README.md') as f:
 app = FastAPI(
     title="NotifierAlexfomalhaut",
     description=description,
-    version="0.1.0",
+    version="0.1.1",
 )
 
 # Configure authorization with token
@@ -43,7 +43,7 @@ CredentialsType = Annotated[HTTPAuthorizationCredentials, Depends(security)]
 app.telegram_bot = ApplicationBuilder().token(TELEGRAM_BOT_TOKEN).build().bot
 
 
-@app.post("/notify")
+@app.post("/notify", status_code=204)
 async def notify_view(request: Request,
                       credentials: CredentialsType, 
                       body: str = Body(media_type='text/plain')):

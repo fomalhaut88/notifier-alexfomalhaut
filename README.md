@@ -13,3 +13,7 @@ Build command: `docker build . -t notifier-alexfomalhaut`
 Test run command: `docker run -it --rm --name=notifier-alexfomalhaut-app -p 8001:8000 -v ./data:/app/data --env-file=.env notifier-alexfomalhaut`
 
 Production run command:  `docker run -it --restart=always --name=notifier-alexfomalhaut-app -p 8001:8000 -v ./data:/app/data --env-file=.env -d notifier-alexfomalhaut`
+
+## Development
+
+Bot for development: `@notifier_alexfomalhaut_dev_bot`.
