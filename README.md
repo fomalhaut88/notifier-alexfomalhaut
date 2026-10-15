@@ -6,7 +6,7 @@ To configure the application you need to register your Telegram bot getting its 
 
 To send a notification, all it is necessary is to call `POST /notify` endpoint, passing the message in the body in Markdown format and `Authorization: Bearer <APP_TOKEN>` in header.
 
-## Run in docker
+## Run in Docker
 
 Build command: `docker build . -t notifier-alexfomalhaut`
 
@@ -16,4 +16,10 @@ Production run command:  `docker run -it --restart=always --name=notifier-alexfo
 
 ## Development
 
-Bot for development: `@notifier_alexfomalhaut_dev_bot`.
+`curl` example:
+
+```
+curl -X POST https://notifier.alexfomalhaut.com/notify -H 'Authorization: Bearer ohGhoh9wee6IeV0Xahdae8eiRooY0Nid0phei5aongah0mooghe0ceR2Wah7li5a' -d 'Hey!!!'
+```
+
+Use your host instead of `https://notifier.alexfomalhaut.com` and `APP_TOKEN` instead of `ohGhoh9wee6IeV0Xahdae8eiRooY0Nid0phei5aongah0mooghe0ceR2Wah7li5a`. The message should be text.
