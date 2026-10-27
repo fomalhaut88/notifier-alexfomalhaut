@@ -16,6 +16,7 @@ docker run \
     -v /var/lib/notifier-alexfomalhaut/data:/app/data \
     -e APP_TOKEN=uiwe3rai3xooh4eephah4Tu7iuGheajahvoh4hu7Xocoe5zah6aequohreghahr9 \
     -e TELEGRAM_BOT_TOKEN=7482936150:AAHk9mP2vXq7RjT4sNw8bLzF3cYdG6uE1aB \
+    -e START_TEXT="Welcome to NotifierAlexfomalhaut bot. Since it is private, please, provide \`APP_TOKEN\` to continue." \
     -d fomalhaut88/notifier-alexfomalhaut
 ```
 

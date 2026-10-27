@@ -11,16 +11,16 @@ from telegram.ext import (filters, Application, ApplicationBuilder,
                           CommandHandler, MessageHandler, ContextTypes)
 from varcache import Varcache
 
+START_TEXT_DEFAULT = """
+Welcome to NotifierAlexfomalhaut bot.
+Since it is private, please, provide `APP_TOKEN` to continue.
+""".strip()
+
 env.read_envfile()
 
 APP_TOKEN = env.str('APP_TOKEN')
 TELEGRAM_BOT_TOKEN = env.str('TELEGRAM_BOT_TOKEN')
-
-
-START_TEXT = """
-Welcome to NotifierAlexfomalhaut bot. 
-Since it is private, please, provide `APP_TOKEN` to continue.
-""".strip()
+START_TEXT = env.str('START_TEXT', default=START_TEXT_DEFAULT).strip()
 
 
 async def post_init(application: Application):
