@@ -122,7 +122,7 @@ def safe_markdown_v2(text: str) -> str:
 
 
 def _escape_special(text: str):
-    text = re.sub(r'(?<!\\)((?:\\\\)*)([\.\-\+\#\!\(\)])', r'\1\\\2', text)
+    text = re.sub(r'(?<!\\)((?:\\\\)*)([\.\-\_\+\#\!\(\)])', r'\1\\\2', text)
     text = re.sub(r'\[(.+?)\]\\\((.*?)\\\)', r'[\1](\2)', text)
     return text
 
